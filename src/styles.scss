@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+// Theme
+$theme-colors: (
+        "primary": #7900df,
+        "secondary": #716c7d,
+        "theme-blue": #12163c
+);
+
+$border-radius: .15rem;
+@import "~bootstrap/scss/bootstrap";
