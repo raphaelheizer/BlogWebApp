@@ -1,1 +1,29 @@
-<p>post works!</p>
+<div class="template-banner bg-theme-blue text-white">
+    <p>_Blog Framework Digital</p>
+    <p>POST_TITLE</p>
+</div>
+<div class="container">
+    ## breadcrumble
+    <div class="d-flex flex-column align-items-center">
+        <h1>POST_TITLE</h1>
+        <div>## coisas</div>
+    </div>
+    <div class="post-text-container">
+        {{postContent}}
+    </div>
+    <hr/>
+    <h4>Comentários</h4>
+
+    <div>
+        <br/>
+        ## POST_COMMENTS (comments components)
+        <br/>
+        <br/>
+    </div>
+
+    <textarea class="form-control" id="text-area-input"
+              placeholder="Escreva um comentário"></textarea>
+
+    <!-- using min-width so the button frame doesn't collapse on small screens -->
+    <button class="btn btn-primary mt-2" style="min-width: 15%">Enviar</button>
+</div>

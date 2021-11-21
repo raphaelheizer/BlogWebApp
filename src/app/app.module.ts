@@ -11,6 +11,9 @@ import { RegisterComponent } from './view/register/register.component';
 import { PasswordRecoverComponent } from './view/password-recover/password-recover.component';
 import { PostComponent } from './view/post/post.component';
 import { PostEditorComponent } from './view/post-editor/post-editor.component';
+import { BlogPostFrameComponent } from './components/blog-post-frame/blog-post-frame.component';
+import { PostInfoDetailsComponent } from './components/post-info-details/post-info-details.component';
+import { PostPropertiesInfoComponent } from './components/post-properties-info/post-properties-info.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { PostEditorComponent } from './view/post-editor/post-editor.component';
     RegisterComponent,
     PasswordRecoverComponent,
     PostComponent,
-    PostEditorComponent
+    PostEditorComponent,
+    BlogPostFrameComponent,
+    PostInfoDetailsComponent,
+    PostPropertiesInfoComponent
   ],
   imports: [
     BrowserModule,

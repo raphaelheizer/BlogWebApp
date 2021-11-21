@@ -5,10 +5,12 @@ import {LoginComponent} from './view/authentication/login.component';
 import {RegisterComponent} from './view/register/register.component';
 import {BlogComponent} from './view/blog/blog.component';
 import {PasswordRecoverComponent} from './view/password-recover/password-recover.component';
+import {PostComponent} from './view/post/post.component';
 
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', component: BlogComponent},
+    {path: 'post', component: PostComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'password-recover', component: PasswordRecoverComponent},

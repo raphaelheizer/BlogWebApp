@@ -1,0 +1,6 @@
+.post-text-container {
+  white-space: -moz-pre-wrap !important; /* Firefox */
+  white-space: -o-pre-wrap !important; /* newer Opera */
+  white-space: pre-wrap !important; /* Chrome; W3C standard */
+  text-align: justify;
+}
