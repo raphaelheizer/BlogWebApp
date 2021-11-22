@@ -22,4 +22,24 @@ $border-radius: .15rem;
   font-weight: 600;
   font-size: 24px;
   text-align: center;
+
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.small-font * {
+  font-size: 12px;
+}
+
+.text-justified {
+  text-align: justify;
+}
+
+.text-pre-wrap {
+  white-space: -moz-pre-wrap !important; /* Firefox */
+  white-space: -o-pre-wrap !important; /* newer Opera */
+  white-space: pre-wrap !important; /* Chrome; W3C standard */
 }

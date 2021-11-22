@@ -1,12 +1,22 @@
-<div class="card my-3" style="width: 400px; height: 300px">
+<div class="card my-3 sm" style="width: 400px; height: 300px;">
     <div class="card-body">
-        <h5 class="card-title">CARD_TITLE</h5>
-        <p>###</p>
-        <p class="card-text">
-            CARD_TEXT
-        </p>
+        <h5 class="card-title">{{truncateTextWithEllipsis(blogPost.title, 80)}}</h5>
+        <app-post-properties-info [date]="blogPost.timestamp | date"
+                                  [category]="blogPost.category"
+                                  [author]="blogPost.author.name">
+
+        </app-post-properties-info>
+        <p class="card-text mt-2 text-justified" [innerHTML]="blogPost.content"></p>
+        <a [routerLink]="'post/'+blogPost.id">Ver mais</a>
     </div>
-    <div class="card-footer">
-        Footer
+    <div class="card-footer d-flex justify-content-between">
+        <div>
+            <fa-icon class="mx-2" [icon]="faEye"></fa-icon>
+            {{blogPost.viewCount}}
+        </div>
+        <div>
+            <fa-icon class="mx-2" [icon]="faComments"></fa-icon>
+            {{blogPost.commentCount}}
+        </div>
     </div>
 </div>

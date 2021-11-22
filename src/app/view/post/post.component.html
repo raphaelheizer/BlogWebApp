@@ -1,29 +1,33 @@
 <div class="template-banner bg-theme-blue text-white">
     <p>_Blog Framework Digital</p>
-    <p>POST_TITLE</p>
+    <p>{{truncateTextWithEllipsis(blogPost.title, 50)}}</p>
 </div>
 <div class="container">
-    ## breadcrumble
-    <div class="d-flex flex-column align-items-center">
-        <h1>POST_TITLE</h1>
-        <div>## coisas</div>
+    <a routerLink="/">Home</a> / {{blogPost.category}} / {{truncateTextWithEllipsis(blogPost.title, 30)}}
+    <div class="d-flex flex-column align-items-center mt-3">
+        <h1 style="word-break: break-all">{{blogPost.title}}</h1>
+        <app-post-properties-info [author]="blogPost.author.name"
+                                  [category]="blogPost.category"
+                                  [date]="blogPost.timestamp | date"
+                                  class="mb-3">
+
+        </app-post-properties-info>
     </div>
-    <div class="post-text-container">
-        {{postContent}}
+    <div class="text-pre-wrap text-justified" [innerHTML]="blogPost.content">
     </div>
     <hr/>
-    <h4>Comentários</h4>
+    <h4>Comentários ({{blogPost.commentCount}})</h4>
 
-    <div>
-        <br/>
-        ## POST_COMMENTS (comments components)
-        <br/>
-        <br/>
+    <div style="display: flex; flex-grow: 1; flex-direction: column">
+        <app-comment style="width: 100%" [postComment]="comment"
+                     *ngFor="let comment of blogPost.comments;"></app-comment>
     </div>
 
     <textarea class="form-control" id="text-area-input"
               placeholder="Escreva um comentário"></textarea>
 
     <!-- using min-width so the button frame doesn't collapse on small screens -->
-    <button class="btn btn-primary mt-2" style="min-width: 15%">Enviar</button>
+    <div class="centered-items-flex-container">
+        <button class="btn btn-secondary mt-2" style="min-width: 15%" disabled>Enviar</button>
+    </div>
 </div>

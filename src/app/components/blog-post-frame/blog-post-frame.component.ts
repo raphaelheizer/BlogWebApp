@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {BlogPost} from '../../models/blog-post';
+import {faComments, faEye} from '@fortawesome/free-solid-svg-icons';
+import {Formatter} from '../../utilities/formatter';
 
 @Component({
-  selector: 'app-blog-post-frame',
-  templateUrl: './blog-post-frame.component.html',
-  styleUrls: ['./blog-post-frame.component.scss']
+    selector: 'app-blog-post-frame',
+    templateUrl: './blog-post-frame.component.html',
+    styleUrls: ['./blog-post-frame.component.scss']
 })
 export class BlogPostFrameComponent implements OnInit {
+    truncateTextWithEllipsis = Formatter.truncateTextWithEllipsis;
 
-  constructor() { }
+    faComments = faComments;
+    faEye = faEye;
 
-  ngOnInit() {
-  }
+    @Input()
+    blogPost: BlogPost;
 
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 }

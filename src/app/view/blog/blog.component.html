@@ -2,16 +2,11 @@
     _Blog Framework Digital
 </div>
 
-<div class="container d-flex flex-wrap justify-content-between"> <!-- TODO: ngFor... -->
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
-    <app-blog-post-frame></app-blog-post-frame>
+<div class="container d-flex flex-wrap">
+    <div class="d-flex flex-grow-1 justify-content-center p-2" *ngIf="!(blogPosts | async)?.length">
+        Ainda não há posts nesta seção. Gostaria de criar um? <a href="">Criar novo post</a>
+    </div>
+    <app-blog-post-frame class="m-2" [blogPost]="blogPost"
+                         *ngFor="let blogPost of blogPosts | async"></app-blog-post-frame>
 </div>
 
