@@ -1,6 +1,6 @@
 # FrameworkDigitalBlogWebApp
 
-Este projeto utiliza a versão 8.3.29 do Angular.
+Este projeto utiliza a versão 8.3.29 do Angular. (LTS)
 
 ## Observações
 
